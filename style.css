@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Truculenta:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Truculenta", sans-serif;
+}
+.content {
+  min-height: 100vh;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  background-color: inherit;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+  padding: 50px 20px;
+  min-height: 350px;
+  width: 320px;
+  border-radius: 7px;
+}
+.box h2 {
+  color: 4777;
+  margin-bottom: 20px;
+  font-size: 2;
+  text-align: center;
+}
+.box textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  border-radius: inherit;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.box .select {
+  width: 100%;
+  box-shadow: inherit;
+  position: relative;
+  margin-bottom: 20px;
+}
+.select select {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-weight: bold;
+  appearance: none;
+}
+select::after {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-top-color: #777;
+  top: 50%;
+  transform: translateY(-3.5px);
+  right: 10px;
+  pointer-events: none;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inherit;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+.button::after,
+.button::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid #ff7708;
+  opacity: 0;
+}
+
+.button.active::after,
+.button.active::before {
+  animation: played 2s ease-in-out infinite;
+}
+.button.active::before {
+  animation-delay: 0.2s;
+}
+@keyframes played {
+  0%,
+  75% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  50%,
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+  }
+}
